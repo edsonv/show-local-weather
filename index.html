@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+	<meta charset="UTF-8">
+	<title>Local Weather</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3" id="topBox">
+				<div class="row">
+					<div class="col-8">
+						<form action="">
+							<div class="input-group">
+								<input type="text" class="form-control" id="address">
+								<div class="input-group-append">
+									<button class="btn btn-default" type="submit" id="search">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-4 text-right">
+						<button class="btn btn-default" id="locate">
+							<i class="fas fa-map-marker-alt"></i>
+						</button>
+                        <input class="unitChange" type="checkbox" data-toggle="toggle" data-on="Imperial" data-off="Metric" data-onstyle="default">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3" id="box">
+				<div class="row">
+					<div class="col-8" id="lhs">
+						<div class="row">
+							<div class="col-5">
+								<img src="" alt="Weather Icon" class="img-fluid" id="weatherIcon">
+							</div>
+							<div class="col-7 text-right">
+								<h1>
+									<span id="temp">
+										Temp
+									</span>
+								</h1>
+								<p class="lead" id="weatherDetail">Detail</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 text-center">
+								<br class="visible-xs">
+                                <p class="lead">
+                                    <span id="location">Location</span>
+                                </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 text-right" id="rhs">
+						<p>
+                            <span class="humidity"></span>
+                            <br>
+                            <strong>Humidity</strong>
+                        </p>
+                        <p>
+                            <span class="wind"></span>
+                            <br>
+                            <strong>Wind</strong>
+                        </p>
+                        <p>
+                            <span class="pressure"></span>
+                            <br>
+                            <strong>Pressure</strong>
+                        </p>
+                        <p>
+                            <span class="max-min-temp"></span>
+                            <br>
+                            <strong>Max/min temp</strong>
+                        </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
