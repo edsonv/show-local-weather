@@ -1,15 +1,22 @@
 var fTemp, cTemp;
 var tempSwap = false;
 
+// To get location coords
 function getCoords() {
+	// Call to an IP service geolocation
+	// Pass the response to getDataByCoords function
 	$.getJSON("http://freegeoip.net/json/", getDataByCoords);
 }
 
+// Once the coords are received, this function is called,
+// sets the lat and lon variables, and make a call to
+// openweathermap API
 function getDataByCoords(coords) {
 	var lat = coords.latitude;
 	var lon = coords.longitude;
 	var api = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=cecab3666714a2c3adb3b520d34f2beb";
-
+	// Call to apenweathermap API
+	// The response is passed to setData function
 	$.getJSON(api, setData);
 }
 
@@ -20,6 +27,9 @@ function getDataByAddress() {
 	$.getJSON(api, setData);
 }
 
+// This function asign variables and extract
+// on them relevant data and sets the html fields
+// with the data stored
 function setData(data) {
 	var icon = data.weather[0].icon;
 	var description = data.weather[0].description;
@@ -32,12 +42,12 @@ function setData(data) {
 	var windDeg = data.wind.deg;
 	var country = data.sys.country;
 	var city = data.name;
-
 	var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
 
-	fTemp = (temp * 9/5)-459.67;
-	cTemp = temp - 273.15;
+	fTemp = ((temp * 9/5)-459.67).toFixed(1);
+	cTemp = (temp - 273.15).toFixed(1);
 
+	// Get the html ID and prints the wanted data
 	$("#temp").html(cTemp + "°C");
 	$("#weatherDetail").html(description);
 	$("#location").html(city + ", " + country);
@@ -56,20 +66,15 @@ $(document).ready(function() {
 		getDataByAddress();
 	});
 
+	// Watch for a click on this ID and change the 
+	// units on it
 	$("#temp").on("click", function(){
 		if (tempSwap === false) {
-			$("#temp").html(fTemp.toFixed(1) + "°F");
+			$("#temp").html(fTemp + "°F");
 			tempSwap = true;
 		} else {
 			$("#temp").html(cTemp + "°C");
 			tempSwap = false;
 		}
 	});
-	
-	
-
-
-	
-
-	
 });
