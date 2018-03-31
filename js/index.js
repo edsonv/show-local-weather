@@ -5,7 +5,7 @@ var tempSwap = false;
 function getCoords() {
 	// Call to an IP service geolocation
 	// Pass the response to getDataByCoords function
-	$.getJSON("http://freegeoip.net/json/", getDataByCoords);
+	$.getJSON("https://freegeoip.net/json/", getDataByCoords);
 }
 
 // Once the coords are received, this function is called,
