@@ -14,12 +14,12 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3" id="topBox">
+			<div class="col-sm-6 col-md-4 offset-sm-3 offset-md-4" id="topBox">
 				<div class="row">
-					<div class="col-8">
-						<form action="">
+					<div class="col-10">
+						<form class="addForm">
 							<div class="input-group">
-								<input type="text" class="form-control" id="address">
+								<input type="text" class="form-control" id="address" placeholder="City, State, Country">
 								<div class="input-group-append">
 									<button class="btn btn-default" type="submit" id="search">
 										<i class="fas fa-search"></i>
@@ -28,21 +28,20 @@
 							</div>
 						</form>
 					</div>
-					<div class="col-4 text-right">
+					<div class="col-2 px-0">
 						<button class="btn btn-default" id="locate">
 							<i class="fas fa-map-marker-alt"></i>
 						</button>
-                        <input class="unitChange" type="checkbox" data-toggle="toggle" data-on="Imperial" data-off="Metric" data-onstyle="default">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3" id="box">
-				<div class="row">
+			<div class="col-sm-6 col-md-4 offset-sm-3 offset-md-4" id="box">
+				<div class="row align-items-center">
 					<div class="col-8" id="lhs">
-						<div class="row">
-							<div class="col-5">
+						<div class="row align-items-end">
+							<div class="col-5 text-right">
 								<img src="" alt="Weather Icon" class="img-fluid" id="weatherIcon">
 							</div>
 							<div class="col-7 text-right">
@@ -51,12 +50,14 @@
 										Temp
 									</span>
 								</h1>
-								<p class="lead" id="weatherDetail">Detail</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12 text-center">
 								<br class="visible-xs">
+								<p class="lead" id="weatherDetail">
+									<span>Detail</span>
+								</p>
                                 <p class="lead">
                                     <span id="location">Location</span>
                                 </p>
@@ -79,11 +80,11 @@
                             <br>
                             <strong>Pressure</strong>
                         </p>
-                        <p>
+                        <!-- <p>
                             <span class="max-min-temp"></span>
                             <br>
                             <strong>Max/min temp</strong>
-                        </p>
+                        </p> -->
 					</div>
 				</div>
 			</div>
@@ -97,5 +98,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<script src="./js/index.js"></script>
+
 </body>
 </html>
