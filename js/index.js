@@ -42,7 +42,7 @@ function setData(data) {
 	var windDeg = data.wind.deg;
 	var country = data.sys.country;
 	var city = data.name;
-	var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
+	var iconUrl = "https://openweathermap.org/img/w/" + icon + ".png";
 
 	fTemp = ((temp * 9/5)-459.67).toFixed(1);
 	cTemp = (temp - 273.15).toFixed(1);
